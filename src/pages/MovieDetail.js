@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { useHistory } from "react-router-dom";
 import { MovieState } from "../movieState";
-import { motion } from "framer-motion";
-//import { pageAnimation } from "../animation";
+import { motion } from 'framer-motion';
+import {pageAnimation} from '../animation';
 
 const MovieDetail = () => {
   const history = useHistory();
@@ -23,7 +23,7 @@ const MovieDetail = () => {
       {movie && (
         <Details
           exit="exit"
-          // variants={pageAnimation}
+          variants={pageAnimation}
           initial="hidden"
           animate="show"
         >
