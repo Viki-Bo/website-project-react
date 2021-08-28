@@ -7,17 +7,18 @@ import goodtimes from '../img/goodtimes-small.png';
 import { motion } from 'framer-motion';
 import {sliderContainer, pageAnimation, fade, photoAnim, lineAnim, slider} from '../animation';
 import {useScroll} from '../components/useScroll';
+import ScrollTop from '../components/ScrollTop';
 
 const OurWork = () => {
     const [element, controls] = useScroll();
     const [element2, controls2] = useScroll();
     return (
-        <Work 
-            exit="exit"
-            variants={pageAnimation}
-            initial="hidden"
-            animate="show"
-            style={{background: "#fff" }}
+        <Work
+                style={{ background: '#fff' }}
+                variants={pageAnimation}
+                exit="exit"
+                initial="hidden"
+                animate="show"
             >
             <motion.div variants={sliderContainer}>
                 <Frame1 variants={slider}></Frame1>
@@ -64,6 +65,7 @@ const OurWork = () => {
                 <img src={goodtimes} alt="goodtimes" />
                 </Link>
             </Movie>
+            <ScrollTop />
         </Work>
     );
 };
@@ -72,6 +74,10 @@ const Work = styled(motion.div)`
     min-height: 100vh;
     overflow: hidden;
     padding: 5rem 10rem;
+    @media (max-width: 1300px){
+        padding: 2rem 2rem;
+    }
+
     h2{
         padding: 1rem 0rem;
     }
